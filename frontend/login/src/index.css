@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+/* spheres animation */
+
+.sphere{
+  position:absolute;
+  border-radius:50%;
+  background:linear-gradient(135deg,#0E84A5,#4DAAC5);
+  opacity:0.45; /* plus visible */
+  animation: float 25s infinite linear;
+}
+
+.sphere1{
+  width:250px;
+  height:250px;
+  left:10%;
+  bottom:-200px;
+}
+
+.sphere2{
+  width:150px;
+  height:150px;
+  left:40%;
+  bottom:-150px;
+}
+
+.sphere3{
+  width:300px;
+  height:300px;
+  left:70%;
+  bottom:-250px;
+}
+
+.sphere4{
+  width:120px;
+  height:120px;
+  left:85%;
+  bottom:-200px;
+}
+
+@keyframes float{
+  0%{
+    transform:translateY(0);
+  }
+
+  100%{
+    transform:translateY(-1200px);
+  }
+}
