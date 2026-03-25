@@ -511,7 +511,7 @@ style={{cursor:"default"}}
 <div className="tooltip-container">
   <button
   disabled={group.id === 1}
-  className="btn btn-light btn-sm me-2"
+  className="btn  btn-sm me-2"
   onClick={()=>{
     if(group.id === 1) return;
 
@@ -531,7 +531,7 @@ style={{cursor:"default"}}
 <div className="tooltip-container">
   <button
     disabled={group.id === 1}
-    className="btn btn-light btn-sm me-2"
+    className="btn  btn-sm me-2"
     onClick={() => handleAction("users_groups", "update", () => handleEdit(group))}
   >
     ✏️
@@ -541,7 +541,7 @@ style={{cursor:"default"}}
 <div className="tooltip-container">
   <button
     disabled={group.id === 1}
-    className="btn btn-light btn-sm me-2"
+    className="btn  btn-sm me-2"
     onClick={() => handleAction("users_groups", "delete", () => archiveGroup(group))}
   >
     🗑

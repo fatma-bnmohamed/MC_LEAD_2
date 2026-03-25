@@ -7,7 +7,8 @@ const db = require("./config/db");
 const userRoutes = require("./routes/userRoutes");
 const userGroupRoutes = require("./routes/userGroupRoutes");
 const authRoutes = require("./routes/authRoutes");
-
+const customFieldRoutes = require("./routes/customFieldRoutes");
+const campaignRoutes = require("./routes/campaignRoutes");
 const app = express();
 
 app.use(cors({
@@ -20,7 +21,8 @@ app.use(express.json());
 app.use(userRoutes);
 app.use(userGroupRoutes);
 app.use(authRoutes);
-
+app.use(customFieldRoutes);
+app.use(campaignRoutes);
 // créer serveur HTTP
 const server = http.createServer(app);
 

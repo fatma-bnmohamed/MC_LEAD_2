@@ -765,7 +765,7 @@ className={`badge ${user.status ? "bg-success" : "bg-secondary"}`}
 
 <div className="tooltip-container">
   <button
-    className="btn btn-light btn-sm me-2"
+    className="btn  btn-sm me-2"
     onClick={() => handleAction("users", "update", () => toggleStatus(user))}
   >
     👁
@@ -777,7 +777,7 @@ className={`badge ${user.status ? "bg-success" : "bg-secondary"}`}
 
 <div className="tooltip-container">
   <button
-    className="btn btn-light btn-sm me-2"
+    className="btn btn-sm me-2"
     onClick={() => handleAction("users", "update", () => handleEdit(user))}
   >
     ✏️
@@ -787,7 +787,7 @@ className={`badge ${user.status ? "bg-success" : "bg-secondary"}`}
 
 <div className="tooltip-container">
   <button
-    className="btn btn-light btn-sm me-2"
+    className="btn  btn-sm me-2"
     onClick={() => handleAction("users", "update", () => setResetUser(user))}
   >
     🔑
@@ -799,7 +799,7 @@ className={`badge ${user.status ? "bg-success" : "bg-secondary"}`}
 
 <div className="tooltip-container">
   <button
-    className="btn btn-light btn-sm"
+    className="btn  btn-sm"
    onClick={() => handleAction("users", "delete", () => setArchiveUserInfo(user))}
     
   >
@@ -1241,8 +1241,7 @@ Annuler
 <button
 className="btn"
 style={{background:"#0E84A5",color:"white"}}
-onClick={() => handleAction("users", "update", resetPassword)}
->
+onClick={() => handleAction("users", "update", resetPassword)}>
 Sauvegarder
 </button>
 

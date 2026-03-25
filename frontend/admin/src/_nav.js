@@ -12,6 +12,7 @@ import {
   cilHistory,
   cilCreditCard,
   cilClock,
+  cibMyspace,
   cilPeople
 } from '@coreui/icons'
 import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
@@ -30,7 +31,7 @@ const _nav = [
     name: 'Gestion',
   },
 
-  // 🔐 USERS
+  //  USERS
   hasPermission("users","view") && {
     component: CNavItem,
     name: 'Utilisateurs',
@@ -38,15 +39,15 @@ const _nav = [
     icon: <CIcon icon={cilUser} className="nav-icon" />,
   },
 
-  // 🔐 USER GROUP
+  //  USER GROUP
   hasPermission("users_groups","view") && {
     component: CNavItem,
     name: 'Groupes Utilisateurs',
     to: '/usergroup',
-    icon: <CIcon icon={cilPeople} className="nav-icon" />,
+    icon: <CIcon icon={cibMyspace} size="lg" className="nav-icon" />,
   },
 
-  // 🔐 PRODUITS
+  //  PRODUITS
   hasPermission("campaigns","view") && {
     component: CNavItem,
     name: 'Produits & Campagnes',
@@ -54,15 +55,9 @@ const _nav = [
     icon: <CIcon icon={cilLayers} className="nav-icon" />,
   },
 
-  // 🔐 PERMISSIONS
-  hasPermission("permissions","view") && {
-    component: CNavItem,
-    name: 'Permissions',
-    to: '/permissions',
-    icon: <CIcon icon={cilSettings} className="nav-icon" />,
-  },
+ 
 
-  // 🔐 LEADS
+  //  LEADS
   hasPermission("leads","view") && {
     component: CNavItem,
     name: 'Leads',
@@ -114,6 +109,35 @@ const _nav = [
     to: '/pointage',
     icon: <CIcon icon={cilClock} className="nav-icon" />,
   },
+
+   {
+    component: CNavTitle,
+    name: 'Paramétres',
+  },
+
+
+   //  Profils
+  hasPermission("profils","view") && {
+    component: CNavItem,
+    name: 'Profils',
+    to: '/profils',
+    icon: <CIcon icon={cilPeople} className="nav-icon" />,
+  },
+
+// 🔐 PERMISSIONS
+  hasPermission("permissions","view") && {
+    component: CNavItem,
+    name: 'Permissions',
+    to: '/permissions',
+    icon: <CIcon icon={cilSettings} className="nav-icon" />,
+  },
+
+  hasPermission("custom_fields","view") && {
+  component: CNavItem,
+  name: 'Champs personnalisés',
+  to: '/custom-fields',
+  icon: <CIcon icon={cilList} className="nav-icon" />,
+},
 
 ].filter(Boolean); 
 

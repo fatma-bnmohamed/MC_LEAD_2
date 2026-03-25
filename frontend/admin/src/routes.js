@@ -44,7 +44,7 @@ const Charts = React.lazy(() => import('./views/charts/Charts'))
 const CoreUIIcons = React.lazy(() => import('./views/icons/coreui-icons/CoreUIIcons'))
 const Flags = React.lazy(() => import('./views/icons/flags/Flags'))
 const Brands = React.lazy(() => import('./views/icons/brands/Brands'))
-
+const CustomFields = React.lazy(() => import('./views/custom-fields/CustomFields'));
 // Notifications
 const Alerts = React.lazy(() => import('./views/notifications/alerts/Alerts'))
 const Badges = React.lazy(() => import('./views/notifications/badges/Badges'))
@@ -102,6 +102,7 @@ const routes = [
   { path: '/users', name: 'Utilisateurs', element: Users },
   {path: '/usergroup', name: 'UserGroup', element: UserGroup},
   { path: '/permissions', name: 'Permissions', element: Permissions },
+  {path: '/custom-fields', name: 'Champs personnalisés', element: CustomFields},
 ]
 
 export default routes
