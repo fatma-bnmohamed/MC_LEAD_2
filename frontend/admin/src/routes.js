@@ -4,8 +4,14 @@ const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'))
 const Colors = React.lazy(() => import('./views/theme/colors/Colors'))
 const Typography = React.lazy(() => import('./views/theme/typography/Typography'))
 const Users = React.lazy(() => import('./views/users/Users'))
+const Company = React.lazy(() => import('./views/Companies/CompaniesPage'))
 const UserGroup = React.lazy(() => import('./views/usergroup/UserGroup'))
 const Permissions = React.lazy(() => import('./views/config/permissions'))
+const LeadsPage = React.lazy(() => import('./views/leads/LeadsPage'))
+const AllLeads = React.lazy(() => import('./views/leads/AllLeads'))
+const NewLead = React.lazy(() => import('./views/leads/NewLead'))
+const ClosedLeads = React.lazy(() => import('./views/leads/ClosedLeads'))
+const LeadDetails = React.lazy(() => import('./views/leads/LeadDetails'))
 // Base
 const Accordion = React.lazy(() => import('./views/base/accordion/Accordion'))
 const Breadcrumbs = React.lazy(() => import('./views/base/breadcrumbs/Breadcrumbs'))
@@ -44,7 +50,7 @@ const Charts = React.lazy(() => import('./views/charts/Charts'))
 const CoreUIIcons = React.lazy(() => import('./views/icons/coreui-icons/CoreUIIcons'))
 const Flags = React.lazy(() => import('./views/icons/flags/Flags'))
 const Brands = React.lazy(() => import('./views/icons/brands/Brands'))
-const CustomFields = React.lazy(() => import('./views/custom-fields/CustomFields'));
+
 // Notifications
 const Alerts = React.lazy(() => import('./views/notifications/alerts/Alerts'))
 const Badges = React.lazy(() => import('./views/notifications/badges/Badges'))
@@ -102,7 +108,15 @@ const routes = [
   { path: '/users', name: 'Utilisateurs', element: Users },
   {path: '/usergroup', name: 'UserGroup', element: UserGroup},
   { path: '/permissions', name: 'Permissions', element: Permissions },
-  {path: '/custom-fields', name: 'Champs personnalisés', element: CustomFields},
+  
+  {path: '/companies', name: 'Produits & Campagnes', element: Company},
+  { path: '/leads', exact: true, name: 'Leads', element: LeadsPage },
+{ path: '/leads', exact: true, element: AllLeads },
+{ path: '/leads/all', name: 'All Leads', element: AllLeads },
+{ path: '/leads/new', name: 'Nouveau Lead', element: NewLead },
+{ path: '/leads/closed', name: 'Closed Leads', element: ClosedLeads },
+
+{ path: '/leads/:id', name: 'Lead Details', element: LeadDetails },
 ]
 
 export default routes

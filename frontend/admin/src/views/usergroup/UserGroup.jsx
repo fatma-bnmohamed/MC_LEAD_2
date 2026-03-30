@@ -41,7 +41,7 @@ const archiveManyGroups = async ()=>{
 
 const token = localStorage.getItem("token");
 
-const response = await fetch("http://localhost:5000/userGroup/archive-many",{
+const response = await fetch("http://localhost:5001/userGroup/archive-many",{
 method:"PUT",
 headers:{
 "Content-Type":"application/json",
@@ -69,7 +69,7 @@ const archiveGroup = async (group)=>{
 
   const token = localStorage.getItem("token");
 
-  const response = await fetch(`http://localhost:5000/userGroup/archive/${group.id}`,{
+  const response = await fetch(`http://localhost:5001/userGroup/archive/${group.id}`,{
     method:"PUT",
     headers:{ Authorization:`Bearer ${token}` }
   });
@@ -92,7 +92,7 @@ const fetchGroups = async ()=>{
 
 const token = localStorage.getItem("token");
 
-const response = await fetch("http://localhost:5000/userGroup",{
+const response = await fetch("http://localhost:5001/userGroup",{
 headers:{ Authorization:`Bearer ${token}` }
 });
 
@@ -156,7 +156,7 @@ const updateGroup = async (id)=>{
 
 const token = localStorage.getItem("token");
 
-const response = await fetch(`http://localhost:5000/userGroup/update/${id}`,{
+const response = await fetch(`http://localhost:5001/userGroup/update/${id}`,{
 method:"PUT",
 headers:{
 "Content-Type":"application/json",
@@ -185,7 +185,7 @@ const toggleStatus = async (group)=>{
 
 const token = localStorage.getItem("token");
 
-const response = await fetch(`http://localhost:5000/userGroup/toggle-status/${group.id}`,{
+const response = await fetch(`http://localhost:5001/userGroup/toggle-status/${group.id}`,{
 method:"PUT",
 headers:{
 "Content-Type":"application/json",
@@ -212,7 +212,7 @@ const changeStatusMany = async ()=>{
 
 const token = localStorage.getItem("token");
 
-await fetch("http://localhost:5000/userGroup/status-many",{
+await fetch("http://localhost:5001/userGroup/status-many",{
 method:"PUT",
 headers:{
 "Content-Type":"application/json",
@@ -239,7 +239,7 @@ setAddGroupError("");
 
 const token = localStorage.getItem("token");
 
-await fetch("http://localhost:5000/userGroup/create",{
+await fetch("http://localhost:5001/userGroup/create",{
 method:"POST",
 headers:{
 "Content-Type":"application/json",
@@ -271,7 +271,7 @@ const confirmDeleteGroup = async ()=>{
 
 const token = localStorage.getItem("token");
 
-await fetch(`http://localhost:5000/userGroup/delete/${deleteGroupId}`,{
+await fetch(`http://localhost:5001/userGroup/delete/${deleteGroupId}`,{
 method:"DELETE",
 headers:{ Authorization:`Bearer ${token}` }
 });
@@ -288,7 +288,7 @@ const deleteManyGroups = async ()=>{
 
 const token = localStorage.getItem("token");
 
-await fetch("http://localhost:5000/userGroup/delete-many",{
+await fetch("http://localhost:5001/userGroup/delete-many",{
 method:"DELETE",
 headers:{
 "Content-Type":"application/json",

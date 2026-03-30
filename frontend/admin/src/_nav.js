@@ -47,23 +47,44 @@ const _nav = [
     icon: <CIcon icon={cibMyspace} size="lg" className="nav-icon" />,
   },
 
-  //  PRODUITS
-  hasPermission("campaigns","view") && {
-    component: CNavItem,
-    name: 'Produits & Campagnes',
-    to: '/produits',
-    icon: <CIcon icon={cilLayers} className="nav-icon" />,
-  },
+  //  CAMPAGNES
+ hasPermission("campaigns","view") && {
+  component: CNavItem,
+  name: 'Campagnes',
+  to: '/companies', // ✅ CORRECT
+  icon: <CIcon icon={cilLayers} className="nav-icon" />,
+},
 
  
 
   //  LEADS
-  hasPermission("leads","view") && {
-    component: CNavItem,
-    name: 'Leads',
-    to: '/leads',
-    icon: <CIcon icon={cilList} className="nav-icon" />,
-  },
+ hasPermission("leads","view") && {
+  component: CNavGroup,
+  name: 'Leads',
+  icon: <CIcon icon={cilList} className="nav-icon" />,
+  
+  items: [
+
+    {
+      component: CNavItem,
+      name: 'All Leads',
+      to: '/leads', // page principale
+    },
+
+    {
+      component: CNavItem,
+      name: 'Nouveau Lead',
+      to: '/leads/new',
+    },
+
+    {
+      component: CNavItem,
+      name: 'Closed Leads',
+      to: '/leads/closed',
+    },
+
+  ],
+},
 
   {
     component: CNavTitle,

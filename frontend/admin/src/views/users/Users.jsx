@@ -59,7 +59,7 @@ const archiveUser = async (user) => {
   const token = localStorage.getItem("token");
 
   try {
-    const response = await fetch(`http://localhost:5000/users/archive/${user.id}`,{
+    const response = await fetch(`http://localhost:5001/users/archive/${user.id}`,{
       method:"PUT",
       headers:{
         "Content-Type":"application/json",
@@ -130,7 +130,7 @@ setAddUserError("");
 
 const token = localStorage.getItem("token");
 
-const response = await fetch("http://localhost:5000/users/create",{
+const response = await fetch("http://localhost:5001/users/create",{
 method:"POST",
 headers:{
 "Content-Type":"application/json",
@@ -179,7 +179,7 @@ const toggleStatus = async (user) => {
 
 const token = localStorage.getItem("token");
 
-const response = await fetch(`http://localhost:5000/users/toggle-status/${user.id}`,{
+const response = await fetch(`http://localhost:5001/users/toggle-status/${user.id}`,{
 method:"PUT",
 headers:{
 "Content-Type":"application/json",
@@ -224,7 +224,7 @@ const fetchRoles = async () => {
 
   const token = localStorage.getItem("token");
 
-  const response = await fetch("http://localhost:5000/userGroup",{
+  const response = await fetch("http://localhost:5001/userGroup",{
     headers:{
       Authorization:`Bearer ${token}`
     }
@@ -247,7 +247,7 @@ const fetchUsers = async ()=>{
 
 const token = localStorage.getItem("token");
 
-const response = await fetch("http://localhost:5000/users",{
+const response = await fetch("http://localhost:5001/users",{
 headers:{
 Authorization:`Bearer ${token}`
 }
@@ -273,7 +273,7 @@ const changeStatusMany = async ()=>{
 
 const token = localStorage.getItem("token");
 
-const response = await fetch("http://localhost:5000/users/status-many",{
+const response = await fetch("http://localhost:5001/users/status-many",{
 method:"PUT",
 headers:{
 "Content-Type":"application/json",
@@ -307,7 +307,7 @@ return;
 
 const token = localStorage.getItem("token");
 
-const response = await fetch(`http://localhost:5000/users/reset-password/${resetUser.id}`,{
+const response = await fetch(`http://localhost:5001/users/reset-password/${resetUser.id}`,{
 
 method:"PUT",
 
@@ -366,7 +366,7 @@ const token = localStorage.getItem("token");
 const user = users.find(u=>u.id === id);
 if(!user) return;
 
-const response = await fetch(`http://localhost:5000/users/update/${id}`,{
+const response = await fetch(`http://localhost:5001/users/update/${id}`,{
 
 method:"PUT",
 
@@ -402,7 +402,7 @@ const archiveManyUsers = async () => {
 
   const token = localStorage.getItem("token");
 
-  const response = await fetch("http://localhost:5000/users/archive-many",{
+  const response = await fetch("http://localhost:5001/users/archive-many",{
     method:"PUT",
     headers:{
       "Content-Type":"application/json",

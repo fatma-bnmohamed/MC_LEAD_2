@@ -28,7 +28,7 @@ useEffect(() => {
   const fetchGroups = async ()=>{
     const token = localStorage.getItem("token");
 
-    const res = await fetch("http://localhost:5000/userGroup",{
+    const res = await fetch("http://localhost:5001/userGroup",{
       headers:{ Authorization:`Bearer ${token}` }
     });
 
@@ -83,7 +83,7 @@ useEffect(() => {
   const savePermissions = async ()=>{
     const token = localStorage.getItem("token");
 
-    await fetch(`http://localhost:5000/userGroup/permissions/${selectedGroup.id}`,{
+    await fetch(`http://localhost:5001/userGroup/permissions/${selectedGroup.id}`,{
       method:"PUT",
       headers:{
         "Content-Type":"application/json",
